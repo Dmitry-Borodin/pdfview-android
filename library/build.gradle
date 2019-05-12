@@ -1,45 +1,51 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
+apply plugin: 'maven-publish'
+apply plugin: 'com.jfrog.bintray'
 
-buildscript {
-    repositories {
-        google()
-        jcenter()
-        mavenCentral()
-    }
+def libVersion = '0.0.1'
 
-    dependencies {
-        classpath 'com.android.tools.build:gradle:3.4.0'
+//  to upload to jcenter use ./gradlew build bintrayUpload
+bintray {
+    user = System.getenv('bintrayUser')
+    key = System.getenv('bintrayKey')
+    publications = ['MyPublication']
+    pkg {
+        repo = 'pdfview'
+        name = 'pdfview'
+        licenses = ['Apache-2.0']
+        vcsUrl = 'https://github.com/Dmitry-Borodin/pdfview'
+
+        version {
+            name = libVersion
+            desc = 'Small library to show PDF files in your native android application'
+            released = new Date()
+            vcsTag = libVersion
+            attributes = ['gradle-plugin': "com.pdfview:pdfview:$libVersion"]
+        }
     }
 }
 
-android {
-    compileSdkVersion 28
-    buildToolsVersion '28.0.3'
-
-    defaultConfig {
-        minSdkVersion 21
-        targetSdkVersion 28
-    }
-
-    buildTypes {
-        debug {
-            debuggable = true
+task sourcesJar(type: Jar) {
+    from sourceSets.main.java.srcDirs
+    classifier = 'sources'
+}
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+publishing {
+    publications {
+        MyPublication(MavenPublication) {
+            from components.java
+            artifact sourcesJar
+            groupId 'com.pdfview'
+            artifactId 'pdfview'
+            version libVersion
         }
-        release {
-            debuggable = false
-        }
-    }
-
-    packagingOptions {
-        exclude 'LICENSE'
-        exclude 'META-INF/DEPENDENCIES'
-        exclude 'META-INF/NOTICE'
-        exclude 'META-INF/LICENSE'
-        exclude 'META-INF/LICENSE.txt'
-        exclude 'META-INF/NOTICE.txt'
     }
 }
+
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
