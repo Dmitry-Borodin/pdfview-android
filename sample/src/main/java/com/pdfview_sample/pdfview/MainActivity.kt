@@ -1,8 +1,8 @@
-package com.sixt.pdfview
+package com.pdfview_sample.pdfview
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import com.sixt.android.pdf.PDFView
+import com.pdfview.pdf.PDFView
 
 class MainActivity : AppCompatActivity() {
 

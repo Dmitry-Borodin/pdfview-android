@@ -1,4 +1,4 @@
-package com.sixt.pdfview
+package com.pdfview_sample.pdfview
 
 import org.junit.Test
 

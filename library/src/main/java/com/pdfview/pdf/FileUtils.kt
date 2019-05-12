@@ -1,4 +1,4 @@
-package com.sixt.android.pdf
+package com.pdfview.pdf
 
 import android.content.Context
 import java.io.File

@@ -1,4 +1,4 @@
-package com.sixt.pdfview
+package com.pdfview_sample.pdfview
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getTargetContext()
-        assertEquals("com.sixt.pdfview", appContext.packageName)
+        assertEquals("com.pdfview_sample.pdfview", appContext.packageName)
     }
 }

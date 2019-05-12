@@ -1,4 +1,4 @@
-package com.sixt.android.pdf.subsamplincscaleimageview.decoder;
+package com.pdfview.pdf.subsamplincscaleimageview.decoder;
 
 import android.content.ContentResolver;
 import android.content.Context;
@@ -13,7 +13,7 @@ import android.support.annotation.Nullable;
 import android.text.TextUtils;
 
 
-import com.sixt.android.pdf.subsamplincscaleimageview.SubsamplingScaleImageView;
+import com.pdfview.pdf.subsamplincscaleimageview.SubsamplingScaleImageView;
 
 import java.io.InputStream;
 import java.util.List;

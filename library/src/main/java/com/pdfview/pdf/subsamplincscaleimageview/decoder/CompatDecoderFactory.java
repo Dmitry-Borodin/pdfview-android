@@ -1,4 +1,4 @@
-package com.sixt.android.pdf.subsamplincscaleimageview.decoder;
+package com.pdfview.pdf.subsamplincscaleimageview.decoder;
 
 import android.graphics.Bitmap;
 import android.support.annotation.NonNull;

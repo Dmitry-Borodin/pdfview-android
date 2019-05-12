@@ -1,9 +1,9 @@
-package com.sixt.android.pdf
+package com.pdfview.pdf
 
 import android.content.Context
 import android.util.AttributeSet
-import com.sixt.android.pdf.subsamplincscaleimageview.ImageSource
-import com.sixt.android.pdf.subsamplincscaleimageview.SubsamplingScaleImageView
+import com.pdfview.pdf.subsamplincscaleimageview.ImageSource
+import com.pdfview.pdf.subsamplincscaleimageview.SubsamplingScaleImageView
 import java.io.File
 
 class PDFView @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null) : SubsamplingScaleImageView(context, attrs) {

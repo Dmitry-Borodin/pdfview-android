@@ -1,4 +1,4 @@
-package com.sixt.android.pdf.subsamplincscaleimageview;
+package com.pdfview.pdf.subsamplincscaleimageview;
 
 import android.content.ContentResolver;
 import android.content.Context;
@@ -32,13 +32,13 @@ import android.view.View;
 import android.view.ViewParent;
 
 
-import com.sixt.android.pdf.R;
-import com.sixt.android.pdf.subsamplincscaleimageview.decoder.CompatDecoderFactory;
-import com.sixt.android.pdf.subsamplincscaleimageview.decoder.DecoderFactory;
-import com.sixt.android.pdf.subsamplincscaleimageview.decoder.ImageDecoder;
-import com.sixt.android.pdf.subsamplincscaleimageview.decoder.ImageRegionDecoder;
-import com.sixt.android.pdf.subsamplincscaleimageview.decoder.SkiaImageDecoder;
-import com.sixt.android.pdf.subsamplincscaleimageview.decoder.SkiaImageRegionDecoder;
+import com.pdfview.pdf.R;
+import com.pdfview.pdf.subsamplincscaleimageview.decoder.CompatDecoderFactory;
+import com.pdfview.pdf.subsamplincscaleimageview.decoder.DecoderFactory;
+import com.pdfview.pdf.subsamplincscaleimageview.decoder.ImageDecoder;
+import com.pdfview.pdf.subsamplincscaleimageview.decoder.ImageRegionDecoder;
+import com.pdfview.pdf.subsamplincscaleimageview.decoder.SkiaImageDecoder;
+import com.pdfview.pdf.subsamplincscaleimageview.decoder.SkiaImageRegionDecoder;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
