@@ -1,1 +1,3 @@
+rootProject.name = 'pdfview-root'
+
 include ':sample', ':pdfview-android'
