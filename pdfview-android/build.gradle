@@ -2,10 +2,10 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'maven-publish'
 apply plugin: 'com.jfrog.bintray'
+apply from: rootProject.file('jcenter/maven-install.gradle')
+apply from: rootProject.file('jcenter/bintray.gradle')
 
 /// DEPLOY CONFIG
-
-def libVersion = '0.0.1'
 
 //  to upload to jcenter use ./gradlew build bintrayUpload
 bintray {
@@ -19,11 +19,11 @@ bintray {
         vcsUrl = 'https://github.com/Dmitry-Borodin/pdfview'
 
         version {
-            name = libVersion
+            name = ext.libraryVersion
             desc = 'Small library to show PDF files in your native android application'
             released = new Date()
-            vcsTag = libVersion
-            attributes = ['gradle-plugin': "com.pdfview:pdfview:$libVersion"]
+            vcsTag = ext.libraryVersion
+            attributes = ['gradle-plugin': "com.pdfview:pdfview:$ext.libraryVersion"]
         }
     }
 }
