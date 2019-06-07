@@ -2,10 +2,18 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'maven-publish'
 apply plugin: 'com.jfrog.bintray'
-apply from: rootProject.file('jcenter/maven-install.gradle')
-apply from: rootProject.file('jcenter/bintray.gradle')
+//tasks.withType(Javadoc).all {
+//    enabled = false
+//}
+apply from: "$rootDir/jcenter/info.gradle"
 
 /// DEPLOY CONFIG
+
+ext {
+    bintrayName = 'Core'
+    libraryName = 'Core'
+    artifact = 'pdfview-android'
+}
 
 //  to upload to jcenter use ./gradlew build bintrayUpload
 bintray {
@@ -19,23 +27,15 @@ bintray {
         vcsUrl = 'https://github.com/Dmitry-Borodin/pdfview'
 
         version {
-            name = ext.libraryVersion
+            name = libraryVersion
             desc = 'Small library to show PDF files in your native android application'
             released = new Date()
-            vcsTag = ext.libraryVersion
-            attributes = ['gradle-plugin': "com.pdfview:pdfview:$ext.libraryVersion"]
+            vcsTag = libraryVersion
+            attributes = ['gradle-plugin': "com.pdfview:pdfview:$libraryVersion"]
         }
     }
 }
 
-//task sourcesJar(type: Jar) {
-//    from sourceSets.main.java.srcDirs
-//    classifier = 'sources'
-//}
-//task javadocJar(type: Jar, dependsOn: javadoc) {
-//    classifier = 'javadoc'
-//    from javadoc.destinationDir
-//}
 publishing {
     publications {
         MyPublication(MavenPublication) {
@@ -75,6 +75,5 @@ dependencies {
     implementation "com.android.support:support-annotations:28.0.0"
 }
 
-repositories {
-    mavenCentral()
-}
+apply from: "$rootDir/jcenter/maven-install.gradle"
+apply from: "$rootDir/jcenter/bintray.gradle"
