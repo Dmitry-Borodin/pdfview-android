@@ -52,7 +52,7 @@ publishing {
 
 android {
     compileSdkVersion versions.compileSdk
-    buildToolsVersion '28.0.3'
+    buildToolsVersion versions.buildTools
 
     defaultConfig {
         minSdkVersion versions.minSdk
@@ -68,7 +68,6 @@ android {
         }
     }
 }
-
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${versions.kotlin}"
