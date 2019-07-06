@@ -41,7 +41,11 @@ bintray {
         publicDownloadNumbers = true
         override = true
         version {
+            name = libraryVersion
             desc = libraryDescription
+            released = new Date()
+            vcsTag = libraryVersion
+            attributes = ['gradle-plugin': "com.pdfview:pdfview:$libraryVersion"]
         }
     }
 }

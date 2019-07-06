@@ -16,25 +16,6 @@ ext {
 }
 
 //  to upload to jcenter use ./gradlew build bintrayUpload
-bintray {
-    user = System.getenv('bintrayUser')
-    key = System.getenv('bintrayKey')
-    publications = ['MyPublication']
-    pkg {
-        repo = 'pdfview'
-        name = 'pdfview'
-        licenses = ['Apache-2.0']
-        vcsUrl = 'https://github.com/Dmitry-Borodin/pdfview'
-
-        version {
-            name = libraryVersion
-            desc = 'Small library to show PDF files in your native android application'
-            released = new Date()
-            vcsTag = libraryVersion
-            attributes = ['gradle-plugin': "com.pdfview:pdfview:$libraryVersion"]
-        }
-    }
-}
 
 publishing {
     publications {
