@@ -9,14 +9,7 @@ apply from: "$rootDir/jcenter/info.gradle"
 
 /// DEPLOY CONFIG
 
-ext {
-    bintrayName = 'Core'
-    libraryName = 'Core'
-    artifact = 'pdfview-android'
-}
-
 //  to upload to jcenter use ./gradlew build bintrayUpload
-
 publishing {
     publications {
         MyPublication(MavenPublication) {
