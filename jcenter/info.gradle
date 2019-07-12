@@ -1,8 +1,8 @@
 ext {
     libraryVersion = '0.0.1'
 
-    bintrayName = 'Core'
-    libraryName = 'Core'
+    bintrayName = 'pdfview-android'
+    libraryName = 'pdfview-android'
     artifact = 'pdfview-android'
     bintrayRepo = 'pdfview'
 
