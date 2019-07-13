@@ -4,7 +4,6 @@
 [![Download](https://api.bintray.com/packages/dmitrii/pdfview/pdfview-android/images/download.svg)](https://bintray.com//dmitrii/pdfview/pdfview-android/_latestVersion) 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-# publishing work in progress
 Android PDF view - small and efficient PDF viewer embedded in your native app
 
 It is based on ImageView and can handle big files with reasonable performance on low end devices. 
@@ -22,7 +21,7 @@ See [sources](/pdfview-android/src/main/java/com/pdfview/PDFView.kt) for other m
 
 Add gradle dependency:
 ```
-implementation "com.pdfview:pdfview-android:0.0.3" //not yet
+implementation "com.pdfview:pdfview-android:0.0.3" //not yet in jcenter
 ```
 
 
