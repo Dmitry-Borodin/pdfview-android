@@ -1,9 +1,9 @@
-package com.pdfview.pdf
+package com.pdfview
 
 import android.content.Context
 import android.util.AttributeSet
-import com.pdfview.pdf.subsamplincscaleimageview.ImageSource
-import com.pdfview.pdf.subsamplincscaleimageview.SubsamplingScaleImageView
+import com.pdfview.subsamplincscaleimageview.ImageSource
+import com.pdfview.subsamplincscaleimageview.SubsamplingScaleImageView
 import java.io.File
 
 class PDFView @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null) : SubsamplingScaleImageView(context, attrs) {
@@ -31,7 +31,7 @@ class PDFView @JvmOverloads constructor(context: Context, attrs: AttributeSet? =
         return this
     }
 
-    fun scale(scale: Float): PDFView  {
+    fun scale(scale: Float): PDFView {
         mScale = scale
         return this
     }

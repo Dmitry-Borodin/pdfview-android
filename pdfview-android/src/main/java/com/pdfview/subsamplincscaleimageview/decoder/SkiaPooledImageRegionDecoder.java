@@ -1,4 +1,4 @@
-package com.pdfview.pdf.subsamplincscaleimageview.decoder;
+package com.pdfview.subsamplincscaleimageview.decoder;
 
 import android.app.ActivityManager;
 import android.content.ContentResolver;
@@ -21,7 +21,7 @@ import android.text.TextUtils;
 import android.util.Log;
 
 
-import com.pdfview.pdf.subsamplincscaleimageview.SubsamplingScaleImageView;
+import com.pdfview.subsamplincscaleimageview.SubsamplingScaleImageView;
 
 import java.io.File;
 import java.io.FileFilter;

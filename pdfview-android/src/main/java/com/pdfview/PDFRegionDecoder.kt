@@ -1,4 +1,4 @@
-package com.pdfview.pdf
+package com.pdfview
 
 import android.content.Context
 import android.graphics.*
@@ -6,8 +6,8 @@ import android.graphics.pdf.PdfRenderer
 import android.net.Uri
 import android.os.ParcelFileDescriptor
 import android.support.annotation.ColorInt
-import com.pdfview.pdf.subsamplincscaleimageview.SubsamplingScaleImageView.SCALE_TYPE_CENTER_INSIDE
-import com.pdfview.pdf.subsamplincscaleimageview.decoder.ImageRegionDecoder
+import com.pdfview.subsamplincscaleimageview.SubsamplingScaleImageView.SCALE_TYPE_CENTER_INSIDE
+import com.pdfview.subsamplincscaleimageview.decoder.ImageRegionDecoder
 import java.io.File
 
 internal class PDFRegionDecoder(private val view: PDFView,

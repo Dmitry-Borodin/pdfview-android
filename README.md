@@ -5,10 +5,16 @@
 # publishing work in progress
 Android PDF view - small and efficient PDF viewer embedded in your native app
 
+It is based on ImageView and can handle big files with reasonable performance on low end devices. 
+
 ## Usage:
+
+To show pdf you just need a file on the device.
+
 ```
-code of usage here
+findViewById<PDFView>(R.id.activityMainPdfView).fromAsset("paper.pdf").show()
 ```
+See [sources](/pdfview-android/src/main/java/com/pdfview/PDFView.kt) for other methods to provide file.
 
 ## Getting Started:
 

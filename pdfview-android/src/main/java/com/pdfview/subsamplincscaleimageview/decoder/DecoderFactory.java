@@ -1,4 +1,4 @@
-package com.pdfview.pdf.subsamplincscaleimageview.decoder;
+package com.pdfview.subsamplincscaleimageview.decoder;
 
 import android.support.annotation.NonNull;
 

@@ -1,4 +1,4 @@
-package com.pdfview.pdf.subsamplincscaleimageview;
+package com.pdfview.subsamplincscaleimageview;
 
 import android.graphics.Bitmap;
 import android.graphics.Rect;

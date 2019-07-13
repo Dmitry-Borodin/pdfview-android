@@ -1,4 +1,4 @@
-package com.pdfview.pdf.subsamplincscaleimageview;
+package com.pdfview.subsamplincscaleimageview;
 
 import android.graphics.PointF;
 import android.support.annotation.NonNull;
