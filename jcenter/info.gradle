@@ -1,5 +1,5 @@
 ext {
-    libraryVersion = '0.0.2'
+    libraryVersion = '0.0.3'
 
     bintrayName = 'pdfview-android'
     libraryName = 'pdfview-android'
