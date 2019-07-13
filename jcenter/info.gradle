@@ -6,7 +6,7 @@ ext {
     artifact = 'pdfview-android'
     bintrayRepo = 'pdfview'
 
-    publishedGroupId = 'com.pdfview.pdfview'
+    publishedGroupId = 'com.pdfview'
 
     libraryDescription = 'Small library to show PDF files in your native android application'
 
