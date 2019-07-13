@@ -14,8 +14,8 @@ code of usage here
 
 Add gradle dependency:
 ```
-implementation "com.pdfview:pdfview:0.0.1" //not yet
-
+implementation "com.pdfview:pdfview-android:0.0.3" //not yet
+```
 
 
 Thanks to [Manuel Lilienberg](https://github.com/mlilienberg) for initial implementation of this library and [subsampling-scale library](https://github.com/davemorrissey/subsampling-scale-image-view) for influence.
