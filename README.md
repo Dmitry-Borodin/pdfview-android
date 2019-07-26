@@ -15,7 +15,7 @@ To show pdf you just need a file on the device.
 ```
 findViewById<PDFView>(R.id.activityMainPdfView).fromAsset("paper.pdf").show()
 ```
-See [sources](/pdfview-android/src/main/java/com/pdfview/PDFView.kt) for other methods to provide file.
+See [sources](/pdfview-library/src/main/java/com/pdfview/PDFView.kt) for other methods to provide file.
 
 ## Add to your project:
 

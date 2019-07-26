@@ -21,7 +21,7 @@ android {
 
 dependencies {
 //    implementation 'com.pdfview:pdfview-android:0.0.3'
-    implementation project(':pdfview-android')
+    implementation project(':pdfview-library')
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$versions.kotlin"
     implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
