@@ -8,6 +8,10 @@ Android PDF view - small and efficient PDF viewer embedded in your native app
 
 It is based on ImageView and can handle big files with reasonable performance on low-end devices. 
 
+This is how fast scrolling of 680 page document looks like on low level device:
+
+![Example1](gifs/fast_scrolling_on_weak_device.gif)
+
 ## Usage:
 
 To show pdf you just need a file on the device.
@@ -29,7 +33,7 @@ The library is hosted in jcenter, it is available by default on new android proj
 
 Add gradle dependency:
 ```
-implementation "com.pdfview:pdfview-android:0.0.3" //not yet in jcenter
+implementation "com.pdfview:pdfview-android:0.0.5"
 ```
 
 
