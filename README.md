@@ -33,7 +33,7 @@ The library is hosted in jcenter, it is available by default on new android proj
 
 Add gradle dependency:
 ```
-implementation "com.pdfview:pdfview-android:0.0.5"
+implementation "com.pdfview:pdfview-android:1.0.0"
 ```
 
 
