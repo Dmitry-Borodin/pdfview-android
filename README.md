@@ -8,7 +8,7 @@ Android PDF view - small and efficient PDF viewer embedded in your native app
 
 It is based on ImageView and can handle big files with reasonable performance on low-end devices. 
 
-This is how fast scrolling of 680 page document looks like on low level device:
+This is how fast scrolling of 680 page document looks like on low-end device:
 
 ![Example1](gifs/fast_scrolling_on_weak_device.gif)
 
