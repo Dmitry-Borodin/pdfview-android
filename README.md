@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Android Arsenal]( https://img.shields.io/badge/Android%20Arsenal-PdfView--Android-green.svg?style=flat )]( https://android-arsenal.com/details/1/7820 )
 
-Android PDF view - small and efficient PDF viewer embedded in your native app
+Android PDF view - small (73kB .aar file, ~400 methods before minification) and efficient PDF viewer embedded in your native app
 
 It is based on ImageView and can handle big files with reasonable performance on low-end devices. 
 
@@ -20,7 +20,9 @@ To show pdf you just need a file on the device.
 ```
 findViewById<PDFView>(R.id.activityMainPdfView).fromAsset("paper.pdf").show()
 ```
-See [sources](/pdfview-library/src/main/java/com/pdfview/PDFView.kt) for other methods to provide file.
+See [sources](/pdfview-library/src/main/java/com/pdfview/PDFView.kt) for other methods to provide a file.
+
+When you have url - first use your network client to download file to the cache folder, then show it. This library provides view, it doesn't do network requests.
 
 ## Add to your project:
 
