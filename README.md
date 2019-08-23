@@ -22,7 +22,7 @@ findViewById<PDFView>(R.id.activityMainPdfView).fromAsset("paper.pdf").show()
 ```
 See [sources](/pdfview-library/src/main/java/com/pdfview/PDFView.kt) for other methods to provide a file.
 
-When you have url - first use your network client to download file to the cache folder, then show it. This library provides view, it doesn't do network requests.
+If pdf is on remote host - use your network client to download it to the cache folder, then show it. This library provides view, it doesn't do network requests.
 
 ## Add to your project:
 
