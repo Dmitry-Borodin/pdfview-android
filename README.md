@@ -7,7 +7,7 @@
 
 Android PDF view - small (73kB .aar file, ~400 methods before minification) and efficient PDF viewer embedded in your native app
 
-It is based on ImageView and can handle big files with reasonable performance on low-end devices. 
+It is based on ImageView and can handle big files with reasonable scrolling and zooming performance. 
 
 This is how fast scrolling of 680 page document looks like on low-end device:
 
