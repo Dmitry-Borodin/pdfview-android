@@ -39,5 +39,13 @@ Add gradle dependency:
 implementation "com.pdfview:pdfview-android:1.0.0"
 ```
 
+## Contrubitions
+
+Contributions are welcome. 
+Just open PR to dev branch.
+
+Feel free to open issue with any questions.
+
+***
 
 Thanks to [Manuel Lilienberg](https://github.com/mlilienberg) for initial implementation of this library and [subsampling-scale library](https://github.com/davemorrissey/subsampling-scale-image-view) for influence.
