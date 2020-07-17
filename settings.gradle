@@ -1,4 +1,5 @@
 rootProject.name = 'pdfview-root'
 
 include ':pdfview-library',
-		':sample-local'
+		':sample-local',
+		':sample-network'
