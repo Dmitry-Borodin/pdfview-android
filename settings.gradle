@@ -1,3 +1,4 @@
 rootProject.name = 'pdfview-root'
 
-include ':sample', ':pdfview-library'
+include ':pdfview-library',
+		':sample-local'
