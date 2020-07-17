@@ -1,7 +1,7 @@
 package com.pdfview_sample.pdfview
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.pdfview.PDFView
 
 class MainActivity : AppCompatActivity() {
