@@ -10,5 +10,14 @@ import androidx.lifecycle.ViewModel
  * @author Dmitry Borodin on 7/17/20.
  */
 class PdfViewModel : ViewModel() {
-	val pdfPath : LiveData<String> = MutableLiveData()
+
+	private val pdfPath = MutableLiveData<String>()
+
+	fun getLoadedFile() : LiveData<String> {
+		return pdfPath
+	}
+
+	fun requestFile() {
+		//todo
+	}
 }
