@@ -1,16 +1,16 @@
 package com.pdfview_sample.pdfview
 
-import android.app.Application
 import android.content.Context
 import android.net.Uri
+import android.os.Handler
+import android.os.Looper
 import androidx.core.net.toUri
-import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.pdfview_sample.pdfview.Dependencies.PDF_CACHED_FILE_NAME
 import com.pdfview_sample.pdfview.Dependencies.REMOTE_PDF_URL
-import okhttp3.Cache
 import okhttp3.Call
 import okhttp3.Callback
 import okhttp3.OkHttpClient
@@ -61,7 +61,7 @@ class PdfViewModel(private val cacheDir: File) : ViewModel() {
 			}
 
 			override fun onResponse(call: Call, response: Response) {
-				val result = File(cacheDir, "mypdf.pdf")
+				val result = File(cacheDir, PDF_CACHED_FILE_NAME)
 				val body = response.body!!
 				val inputStream = body.byteStream()
 				val input = BufferedInputStream(inputStream)
@@ -69,10 +69,13 @@ class PdfViewModel(private val cacheDir: File) : ViewModel() {
 				input.copyTo(output)
 				output.flush();
 				output.close();
-				input.close();
+				input.close(); //will closing just body is enough??
 				body.close();
-//switch on UI thread
-				pdfPath.value = result.toUri()
+
+				//Update
+				Handler(Looper.getMainLooper()).post {
+					pdfPath.value = result.toUri()
+				}
 			}
 		})
 	}
