@@ -1,4 +1,4 @@
-package com.pdfview_sample.pdfview
+package com.pdfview_network_sample.pdfview
 
 import android.os.Bundle
 import androidx.activity.viewModels

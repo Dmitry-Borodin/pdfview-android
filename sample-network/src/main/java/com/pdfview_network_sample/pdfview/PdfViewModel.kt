@@ -1,4 +1,4 @@
-package com.pdfview_sample.pdfview
+package com.pdfview_network_sample.pdfview
 
 import android.content.Context
 import android.net.Uri
@@ -10,8 +10,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.pdfview_sample.pdfview.Dependencies.PDF_CACHED_FILE_NAME
-import com.pdfview_sample.pdfview.Dependencies.REMOTE_PDF_URL
+import com.pdfview_network_sample.pdfview.Dependencies.PDF_CACHED_FILE_NAME
+import com.pdfview_network_sample.pdfview.Dependencies.REMOTE_PDF_URL
 import okhttp3.Call
 import okhttp3.Callback
 import okhttp3.OkHttpClient
@@ -31,11 +31,10 @@ import java.io.OutputStream
 class PdfViewModel(private val cacheDir: File) : ViewModel() {
 
 	var inProgress = false //should be used from main thread only
+	private val pdfPath: MutableLiveData<Uri> = MutableLiveData<Uri>()
 
-	private val pdfPath: MutableLiveData<Uri> by lazy {
-		MutableLiveData<Uri>().also {
-			loadPdf()
-		}
+	init {
+		loadPdf()
 	}
 
 	fun getLoadedFile(): LiveData<Uri> {

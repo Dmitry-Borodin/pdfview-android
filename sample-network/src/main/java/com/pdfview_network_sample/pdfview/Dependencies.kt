@@ -1,4 +1,4 @@
-package com.pdfview_sample.pdfview
+package com.pdfview_network_sample.pdfview
 
 /**
  * This file represents other components of your app.
