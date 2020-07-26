@@ -9,13 +9,13 @@ import com.pdfview.PDFView
 
 class MainActivity : AppCompatActivity() {
 
-    private val pdfViewModel: PdfViewModel by viewModels<PdfViewModel> {PdfViewModelFactory(applicationContext)}
+	private val pdfViewModel: PdfViewModel by viewModels<PdfViewModel> { PdfViewModelFactory(applicationContext) }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        pdfViewModel.getLoadedFile().observe(this) { uri ->
-            findViewById<PDFView>(R.id.activity_main_pdf_view).fromFile(uri.toFile()).show()
-        }
-    }
+	override fun onCreate(savedInstanceState: Bundle?) {
+		super.onCreate(savedInstanceState)
+		setContentView(R.layout.activity_main)
+		pdfViewModel.getLoadedFile().observe(this) { uri ->
+			findViewById<PDFView>(R.id.activity_main_pdf_view).fromFile(uri.toFile()).show()
+		}
+	}
 }

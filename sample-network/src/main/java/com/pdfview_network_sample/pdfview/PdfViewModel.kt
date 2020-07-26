@@ -10,8 +10,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.pdfview_network_sample.pdfview.Dependencies.PDF_CACHED_FILE_NAME
-import com.pdfview_network_sample.pdfview.Dependencies.REMOTE_PDF_URL
+import com.pdfview_network_sample.pdfview.Constants.PDF_CACHED_FILE_NAME
+import com.pdfview_network_sample.pdfview.Constants.REMOTE_PDF_URL
 import okhttp3.Call
 import okhttp3.Callback
 import okhttp3.OkHttpClient

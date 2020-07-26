@@ -6,7 +6,7 @@ package com.pdfview_network_sample.pdfview
  *
  * @author Dmitry Borodin on 7/17/20.
  */
-object Dependencies {
+object Constants {
 
 	const val REMOTE_PDF_URL = "https://github.com/Dmitry-Borodin/pdfview-android/raw/dev/sample-local/src/main/assets/great-expectations.pdf"
 
