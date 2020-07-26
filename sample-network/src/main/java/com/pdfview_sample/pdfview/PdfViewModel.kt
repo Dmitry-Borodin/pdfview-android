@@ -4,6 +4,7 @@ import android.content.Context
 import android.net.Uri
 import android.os.Handler
 import android.os.Looper
+import androidx.annotation.MainThread
 import androidx.core.net.toUri
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -29,9 +30,11 @@ import java.io.OutputStream
  */
 class PdfViewModel(private val cacheDir: File) : ViewModel() {
 
+	var inProgress = false //should be used from main thread only
+
 	private val pdfPath: MutableLiveData<Uri> by lazy {
 		MutableLiveData<Uri>().also {
-			loadPdfWithOkHttp()
+			loadPdf()
 		}
 	}
 
@@ -39,7 +42,21 @@ class PdfViewModel(private val cacheDir: File) : ViewModel() {
 		return pdfPath
 	}
 
-	private fun loadPdfWithOkHttp() {
+	/**
+	 * No synchronization is used for local variables since we call it only from main thread anyway
+	 */
+	@MainThread
+	private fun loadPdf() {
+
+		val pdf = File(cacheDir, PDF_CACHED_FILE_NAME)
+		if (pdf.exists() && pdf.canRead()) {
+			//file already in a cache - just show it
+			pdfPath.value = pdf.toUri()
+			return
+		}
+
+		if (inProgress) return
+		inProgress = true
 
 //		If your pdf may be changed and backend controling it - http mechanics are recommeneded for caching
 //		This will cause additional network traffic and additional alignment with backend reqired to make sure proper http headers setup on a backend for OkHTTP cache to work properly
@@ -57,10 +74,21 @@ class PdfViewModel(private val cacheDir: File) : ViewModel() {
 		val request = Request.Builder().url(REMOTE_PDF_URL).build()
 		client.newCall(request).enqueue(object : Callback {
 			override fun onFailure(call: Call, e: IOException) {
-				//todo handle
+				//show error state and send analytics report?
+				Handler(Looper.getMainLooper()).post {
+					inProgress = false
+				}
+
 			}
 
 			override fun onResponse(call: Call, response: Response) {
+				if (!response.isSuccessful) {
+					//show error state and send analytics report?
+					Handler(Looper.getMainLooper()).post {
+						inProgress = false
+					}
+					return
+				}
 				val result = File(cacheDir, PDF_CACHED_FILE_NAME)
 				val body = response.body!!
 				val inputStream = body.byteStream()
@@ -75,6 +103,7 @@ class PdfViewModel(private val cacheDir: File) : ViewModel() {
 				//Update
 				Handler(Looper.getMainLooper()).post {
 					pdfPath.value = result.toUri()
+					inProgress = false
 				}
 			}
 		})
