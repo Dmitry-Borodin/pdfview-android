@@ -8,7 +8,7 @@ package com.pdfview_sample.pdfview
  */
 object Dependencies {
 
-	const val REMOTE_PDF_URL = "https://github.com/Dmitry-Borodin/pdfview-android/blob/dev/sample-local/src/main/assets/great-expectations.pdf"
+	const val REMOTE_PDF_URL = "https://github.com/Dmitry-Borodin/pdfview-android/raw/dev/sample-local/src/main/assets/great-expectations.pdf"
 
 	const val PDF_CACHED_FILE_NAME = "mypdf.pdf"
 }
