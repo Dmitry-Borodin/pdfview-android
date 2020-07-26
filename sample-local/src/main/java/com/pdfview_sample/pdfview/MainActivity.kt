@@ -9,7 +9,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        findViewById<PDFView>(R.id.activityMainPdfView).fromAsset("great-expectations.pdf").show()
-//        findViewById<PDFView>(R.id.activityMainPdfView).fromAsset("paper.pdf").show()
+        findViewById<PDFView>(R.id.activity_main_pdf_view).fromAsset("great-expectations.pdf").show()
+//        findViewById<PDFView>(R.id.activity_main_pdf_view).fromAsset("paper.pdf").show()
     }
 }
