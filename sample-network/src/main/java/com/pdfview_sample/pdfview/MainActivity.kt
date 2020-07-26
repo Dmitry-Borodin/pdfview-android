@@ -3,6 +3,7 @@ package com.pdfview_sample.pdfview
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.observe
 import com.pdfview.PDFView
 
 class MainActivity : AppCompatActivity() {
@@ -12,6 +13,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        findViewById<PDFView>(R.id.activityMainPdfView).fromAsset("great-expectations.pdf").show()
+        pdfViewModel.getLoadedFile().observe(this) { url ->
+            findViewById<PDFView>(R.id.activityMainPdfView).fromFile(url).show()
+        }
+
     }
 }
