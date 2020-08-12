@@ -9,7 +9,7 @@ android {
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
     }
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8
@@ -26,13 +26,13 @@ dependencies {
 //    implementation 'com.pdfview:pdfview-android:1.0.0'
     implementation project(':pdfview-library')
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$versions.kotlin"
-    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
     //this provides toUri(), by viewModel and other extensions
     implementation "androidx.fragment:fragment-ktx:1.2.5"
 
     implementation 'com.squareup.okhttp3:okhttp:4.7.2'
 
     testImplementation 'junit:junit:4.13'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 }

@@ -5,7 +5,7 @@ import android.graphics.*
 import android.graphics.pdf.PdfRenderer
 import android.net.Uri
 import android.os.ParcelFileDescriptor
-import android.support.annotation.ColorInt
+import androidx.annotation.ColorInt
 import com.pdfview.subsamplincscaleimageview.SubsamplingScaleImageView.SCALE_TYPE_CENTER_INSIDE
 import com.pdfview.subsamplincscaleimageview.decoder.ImageRegionDecoder
 import java.io.File
