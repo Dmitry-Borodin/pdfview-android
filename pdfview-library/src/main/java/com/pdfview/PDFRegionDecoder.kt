@@ -41,6 +41,12 @@ internal class PDFRegionDecoder(private val view: PDFView,
         val numPageAtEnd = Math.ceil(rect.bottom.toDouble() / pageHeight).toInt() - 1
         val bitmap = Bitmap.createBitmap(rect.width() / sampleSize, rect.height() / sampleSize, Bitmap.Config.ARGB_8888)
         val canvas = Canvas(bitmap)
+        val pageBorderPaint = Paint().apply() {
+            color = Color.BLACK
+            style = Paint.Style.STROKE
+            isAntiAlias = true // for lines thinner than 1
+            strokeWidth = 0.5f * 160f / 25.4f / sampleSize  //  = 0.5 mm
+        }
         canvas.drawColor(backgroundColorPdf)
         canvas.drawBitmap(bitmap, 0f, 0f, null)
         for ((iteration, pageIndex) in (numPageAtStart..numPageAtEnd).withIndex()) {
@@ -52,6 +58,9 @@ internal class PDFRegionDecoder(private val view: PDFView,
                         (-rect.left / sampleSize).toFloat(), -((rect.top - pageHeight * numPageAtStart) / sampleSize).toFloat() + (pageHeight.toFloat() / sampleSize) * iteration)
                 page.render(bitmap,null, matrix, PdfRenderer.Page.RENDER_MODE_FOR_DISPLAY)
                 page.close()
+                val pageBorderRect = RectF(0f, 0f, page.width.toFloat(), page.height.toFloat())
+                matrix.mapRect(pageBorderRect)
+                canvas.drawRect(pageBorderRect, pageBorderPaint)
             }
         }
         return bitmap
