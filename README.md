@@ -41,6 +41,9 @@ Add gradle dependency:
 implementation "com.pdfview:pdfview-android:1.0.0"
 ```
 
+## Wiki
+Please take a look into [the wiki](/../../wiki) to find out the technical details.
+
 ## Contrubitions
 
 Contributions are welcome. 
