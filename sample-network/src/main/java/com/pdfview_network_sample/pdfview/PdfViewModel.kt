@@ -10,8 +10,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.pdfview_network_sample.pdfview.Constants.PDF_CACHED_FILE_NAME
-import com.pdfview_network_sample.pdfview.Constants.REMOTE_PDF_URL
 import okhttp3.Call
 import okhttp3.Callback
 import okhttp3.OkHttpClient
@@ -28,9 +26,20 @@ import java.io.OutputStream
  *
  * @author Dmitry Borodin on 7/17/20.
  */
+
+const val REMOTE_PDF_URL = "https://github.com/Dmitry-Borodin/pdfview-android/raw/dev/sample-local/src/main/assets/great-expectations.pdf"
+const val PDF_CACHED_FILE_NAME = "mypdf.pdf"
+
 class PdfViewModel(private val cacheDir: File) : ViewModel() {
 
-	var inProgress = false //should be used from main thread only
+	/**
+	 * Used to avoid starting another download while first one is in progress. It shouldn't happen anyway,
+	 * but I would like to be sure, even after modification.
+	 *
+	 * If downloading with coroutines we can just keep reference to Job and check if it's active, then we won't need to set it to false.
+	 */
+	private var inProgress = false //should be used from main thread only
+
 	private val pdfPath: MutableLiveData<Uri> = MutableLiveData<Uri>()
 
 	init {
@@ -47,15 +56,17 @@ class PdfViewModel(private val cacheDir: File) : ViewModel() {
 	@MainThread
 	private fun loadPdf() {
 
+		//if currently saving file to disk - Livedata will be updated later, just wait
+		if (inProgress) return
+		inProgress = true
+
 		val pdf = File(cacheDir, PDF_CACHED_FILE_NAME)
 		if (pdf.exists() && pdf.canRead()) {
 			//file already in a cache - just show it
 			pdfPath.value = pdf.toUri()
+			inProgress = false
 			return
 		}
-
-		if (inProgress) return
-		inProgress = true
 
 //		If your pdf may be changed and backend controling it - http mechanics are recommeneded for caching
 //		This will cause additional network traffic and additional alignment with backend reqired to make sure proper http headers setup on a backend for OkHTTP cache to work properly

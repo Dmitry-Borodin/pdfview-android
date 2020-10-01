@@ -24,6 +24,8 @@ See [sources](/pdfview-library/src/main/java/com/pdfview/PDFView.kt) for other m
 
 If pdf is on remote host - use your network client to download it to the cache folder, then show it. This library provides view, it doesn't do network requests.
 
+There is a [sample](/sample-network) of how to do it.
+
 ## Add to your project:
 
 The library is hosted in jcenter, it is available by default on new android projects
@@ -38,6 +40,9 @@ Add gradle dependency:
 ```
 implementation "com.pdfview:pdfview-android:1.0.0"
 ```
+
+## Wiki
+Please take a look into [the wiki](/../../wiki) to find out the technical details.
 
 ## Contrubitions
 
