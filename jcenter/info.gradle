@@ -1,5 +1,24 @@
 ext {
-    libraryVersion = '1.0.0'
+
+//    https://github.com/deva666/Peko/commit/44491bde6d6e75b8f8f659733cbb248496529900
+//    https://central.sonatype.org/pages/ossrh-guide.html
+//    https://central.sonatype.org/pages/gradle.html
+//    todo
+
+    VERSION_NAME='1.0.0'
+//    VERSION_CODE='11'
+    GROUP_ID='com.dmitryborodin'
+
+    POM_DESCRIPTION='Small Android library to show PDF files in your native android application'
+    POM_URL='https://github.com/Dmitry-Borodin/pdfview'
+    POM_SCM_URL='https://github.com/Dmitry-Borodin/pdfview'
+    POM_SCM_CONNECTION='scm:git@github.com:Dmitry-Borodin/pdfview.git'
+    POM_SCM_DEV_CONNECTION='scm:git@github.com:Dmitry-Borodin/pdfview.git'
+    POM_LICENCE_NAME='The Apache Software License, Version 2.0'
+    POM_LICENCE_URL='http://www.apache.org/licenses/LICENSE-2.0.txt'
+    POM_LICENCE_DIST='repo'
+//    POM_DEVELOPER_ID='devmazg'
+    POM_DEVELOPER_NAME='Dmitry Borodin'
 
     bintrayName = 'pdfview-android'
     libraryName = 'pdfview-android'
@@ -7,16 +26,7 @@ ext {
     artifact = 'pdfview-android'
     bintrayRepo = 'pdfview'
 
-    libraryDescription = 'Small library to show PDF files in your native android application'
-
-    siteUrl = 'https://github.com/Dmitry-Borodin/pdfview'
-    gitUrl = 'https://github.com/Dmitry-Borodin/pdfview'
-
     developerId = 'Dmitry-Borodin'
     developerName = 'Dmitry Borodin'
     developerEmail = 'oss@DmitryBorodin.com'
-
-    licenseName = 'Apache-2.0'
-    licenseUrl = 'https://www.apache.org/licenses/LICENSE-2.0.html'
-    allLicenses = ["Apache-2.0"]
 }
