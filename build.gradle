@@ -8,26 +8,28 @@ buildscript {
             'targetSdk': 29,
             'buildTools':'29.0.3',
 
-            'kotlin':'1.4.10'
+            'kotlin':'1.5.21'
     ]
 
      repositories {
-        google()
-        jcenter()
+         mavenCentral()
+         google()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:4.2.2'
-        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4'
-        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}"
     }
+}
+
+plugins {
+    id("io.github.gradle-nexus.publish-plugin") version "1.1.0"
 }
 
 
 allprojects {
     repositories {
+        mavenCentral()
         google()
-        jcenter()
     }
 }
 

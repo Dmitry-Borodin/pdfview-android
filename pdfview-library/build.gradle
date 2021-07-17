@@ -1,9 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-apply plugin: 'maven-publish'
-apply plugin: 'com.jfrog.bintray'
 
-apply from: "$rootDir/jcenter/info.gradle"
+apply from: "$rootDir/maven/info.gradle"
 
 
 //  to upload to bintray use ./gradlew build bintrayUpload
@@ -31,5 +29,5 @@ dependencies {
     implementation 'androidx.annotation:annotation:1.1.0'
 }
 
-apply from: "$rootDir/jcenter/maven-install.gradle"
-apply from: "$rootDir/jcenter/bintray.gradle"
+//apply from: "$rootDir/maven/maven-install.gradle"
+//apply from: "$rootDir/maven/bintray.gradle"
