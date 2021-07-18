@@ -1,7 +1,7 @@
 # pdfview
 
 [![Build Status](https://app.bitrise.io/app/40d453ac50882d9c/status.svg?token=BfV89EoWjOEfvATradLDOw&branch=dev)](https://app.bitrise.io/app/40d453ac50882d9c)
-[![Download](https://api.bintray.com/packages/dmitrii/pdfview/pdfview-android/images/download.svg)](https://bintray.com//dmitrii/pdfview/pdfview-android/_latestVersion) 
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.dmitryborodin/pdfview-android/badge.svg?style=plastic)](https://maven-badges.herokuapp.com/maven-central/com.dmitryborodin/pdfview-android)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Android Arsenal]( https://img.shields.io/badge/Android%20Arsenal-PdfView--Android-green.svg?style=flat )]( https://android-arsenal.com/details/1/7820 )
 
@@ -20,7 +20,7 @@ To show pdf you just need a file on the device.
 ```
 findViewById<PDFView>(R.id.activityMainPdfView).fromAsset("paper.pdf").show()
 ```
-See [sources](/pdfview-library/src/main/java/com/pdfview/PDFView.kt) for other methods to provide a file.
+See [sources](/pdfview-android/src/main/java/com/pdfview/PDFView.kt) for other methods to provide a file.
 
 If pdf is on remote host - use your network client to download it to the cache folder, then show it. This library provides view, it doesn't do network requests.
 
@@ -32,13 +32,13 @@ The library is hosted in jcenter, it is available by default on new android proj
 ```
      repositories {
         <...>
-        jcenter()
+        mavenCentral()
     }
 ```
 
 Add gradle dependency:
 ```
-implementation "com.pdfview:pdfview-android:1.0.0"
+implementation "com.dmitryborodin:pdfview-android:1.1.0"
 ```
 
 ## Wiki
