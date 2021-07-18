@@ -29,16 +29,16 @@ artifacts {
     archives javadocJar
 }
 
-group = ext.publishedGroupId
-version = ext.libraryVersion
+group = publishedGroupId
+version = libraryVersion
 
 afterEvaluate {
     publishing {
         publications {
             release(MavenPublication) {
-                groupId ext.publishedGroupId
-                artifactId ext.artifact
-                version ext.libraryVersion
+                groupId publishedGroupId
+                artifactId artifactId
+                version libraryVersion
                 if (project.plugins.findPlugin("com.android.library")) {
                     from components.release
                 } else {
@@ -49,26 +49,26 @@ afterEvaluate {
                 artifact javadocJar
 
                 pom {
-                    name = ext.artifact
-                    description = ext.libraryDescription
-                    url = ext.siteUrl
+                    name = artifactId
+                    description = libraryDescription
+                    url = siteUrl
                     licenses {
                         license {
-                            name = ext.licenseName
-                            url = ext.licenseUrl
+                            name = licenseName
+                            url = licenseUrl
                         }
                     }
                     developers {
                         developer {
-                            id = ext.developerId
-                            name = ext.developerName
-                            email = ext.developerEmail
+                            id = developerId
+                            name = developerName
+                            email = developerEmail
                         }
                     }
                     scm {
-                        connection = ext.gitConnection
-                        developerConnection = ext.gitDeveloperConnection
-                        url = ext.gitConnection
+                        connection = gitConnection
+                        developerConnection = gitDeveloperConnection
+                        url = gitConnection
                     }
                 }
             }
