@@ -1,7 +1,6 @@
 ext {
     libraryVersion = '1.1.0'
 
-    bintrayName = 'pdfview-android'
     libraryName = 'pdfview-android'
     publishedGroupId = 'com.dmitryborodin'
     artifactId = 'pdfview-android'
