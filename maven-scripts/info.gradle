@@ -1,9 +1,9 @@
 ext {
-    libraryVersion = '1.0.0'
+    libraryVersion = '1.1.0'
 
     bintrayName = 'pdfview-android'
     libraryName = 'pdfview-android'
-    publishedGroupId = 'com.pdfview'
+    publishedGroupId = 'com.dmitryborodin'
     artifact = 'pdfview-android'
     bintrayRepo = 'pdfview'
 
@@ -11,12 +11,21 @@ ext {
 
     siteUrl = 'https://github.com/Dmitry-Borodin/pdfview'
     gitUrl = 'https://github.com/Dmitry-Borodin/pdfview'
+    gitConnection = 'scm:git:github.com/Dmitry-Borodin/pdfview.git'
+    gitDeveloperConnection = 'scm:git:ssh://github.com/Dmitry-Borodin/pdfview.git'
 
     developerId = 'Dmitry-Borodin'
     developerName = 'Dmitry Borodin'
-    developerEmail = 'oss@DmitryBorodin.com'
+    developerEmail = 'pdfview@DmitryBorodin.com'
 
     licenseName = 'Apache-2.0'
     licenseUrl = 'https://www.apache.org/licenses/LICENSE-2.0.html'
     allLicenses = ["Apache-2.0"]
+
+    ossrhUsername = ''
+    ossrhPassword = ''
+    sonatypeStagingProfileId = ''
+    signingKeyId = ''
+    signingPassword = ''
+    signingKey = ''
 }
