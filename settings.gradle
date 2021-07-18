@@ -1,5 +1,5 @@
 rootProject.name = 'pdfview-root'
 
-include ':pdfview-library',
+include ':pdfview-android',
 		':sample-local',
 		':sample-network'

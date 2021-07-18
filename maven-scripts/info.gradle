@@ -1,0 +1,38 @@
+ext {
+    libraryVersion = '1.1.0'
+
+    libraryName = 'pdfview-android'
+    publishedGroupId = 'com.dmitryborodin'
+    artifactId = 'pdfview-android'
+
+    libraryDescription = 'Small library to show PDF files in your native android application'
+
+    siteUrl = 'https://github.com/Dmitry-Borodin/pdfview'
+    gitUrl = 'https://github.com/Dmitry-Borodin/pdfview'
+    gitConnection = 'scm:git:github.com/Dmitry-Borodin/pdfview.git'
+    gitDeveloperConnection = 'scm:git:ssh://github.com/Dmitry-Borodin/pdfview.git'
+
+    developerId = 'Dmitry-Borodin'
+    developerName = 'Dmitry Borodin'
+    developerEmail = 'pdfview@DmitryBorodin.com'
+
+    licenseName = 'Apache-2.0'
+    licenseUrl = 'https://www.apache.org/licenses/LICENSE-2.0.html'
+    allLicenses = ["Apache-2.0"]
+
+    File secretPropsFile = project.rootProject.file('local.properties')
+    if (secretPropsFile.exists()) {
+        // Read local.properties file first if it exists
+        Properties p = new Properties()
+        new FileInputStream(secretPropsFile).withCloseable { is -> p.load(is) }
+        p.each { name, value -> ext[name] = value }
+    } else {
+        // Use system environment variables
+        OSSRH_USERNAME = System.getenv('OSSRH_USERNAME')
+        OSSRH_PASSWORD = System.getenv('OSSRH_PASSWORD')
+        SONATYPE_STAGING_PROFILE_ID = System.getenv('SONATYPE_STAGING_PROFILE_ID')
+        SIGNING_KEY_ID = System.getenv('SIGNING_KEY_ID')
+        SIGNING_PASSWORD = System.getenv('SIGNING_PASSWORD')
+        SIGNING_KEY = System.getenv('SIGNING_KEY')
+    }
+}
