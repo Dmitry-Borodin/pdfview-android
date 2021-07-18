@@ -41,4 +41,5 @@ task clean(type: Delete) {
 apply plugin: "io.github.gradle-nexus.publish-plugin"
 apply plugin: 'org.jetbrains.dokka'
 apply plugin: 'binary-compatibility-validator'
+apply from: "$rootDir/maven-scripts/info.gradle"
 apply from: "${rootDir}/maven-scripts/publish-root.gradle"
