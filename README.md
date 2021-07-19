@@ -28,7 +28,7 @@ There is a [sample](/sample-network) of how to do it.
 
 ## Add to your project:
 
-The library is hosted in jcenter, it is available by default on new android projects
+The library is hosted in the central repository.
 ```
      repositories {
         <...>
