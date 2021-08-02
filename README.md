@@ -51,6 +51,5 @@ Just open PR to dev branch.
 
 Feel free to open issue with any questions.
 
-***
-
+## Credits
 Thanks to [Manuel Lilienberg](https://github.com/mlilienberg) for initial implementation of this library and [subsampling-scale library](https://github.com/davemorrissey/subsampling-scale-image-view) for influence.
